@@ -25,7 +25,7 @@ namespace API.Controllers
             _repository = repository;
         }
 
-        [HttpPost]
+        [HttpPost("signup")]
         public async Task<ActionResult> Signup([FromBody] SignupModel data)
         {
             var res = await _repository.Signup(data);
