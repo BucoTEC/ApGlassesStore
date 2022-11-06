@@ -12,7 +12,7 @@ using Microsoft.IdentityModel.Tokens;
 
 namespace API.Repository.Auth
 {
-    public class AuthRepository
+    public class AuthRepository : IAuthRepository
     {
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly SignInManager<ApplicationUser> _signInManager;

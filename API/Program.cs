@@ -1,6 +1,7 @@
 using System.Text;
 using API.Data;
 using API.Data.Entities;
+using API.Repository.Auth;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.IdentityModel.Tokens;
@@ -35,6 +36,10 @@ builder.Services.AddDbContext<ApplicationDbContext>();
 
 // Identity setup
 builder.Services.AddIdentity<ApplicationUser, IdentityRole>().AddEntityFrameworkStores<ApplicationDbContext>().AddDefaultTokenProviders();
+
+// Repositories
+builder.Services.AddScoped<IAuthRepository, AuthRepository>();
+
 
 // Token auth setup
 builder.Services.AddAuthentication(option =>
@@ -71,6 +76,9 @@ builder.Services.Configure<IdentityOptions>(options =>
     options.Password.RequiredLength = 3;
     options.Password.RequiredUniqueChars = 0;
 });
+
+
+
 
 
 // allow access from all endpoints
