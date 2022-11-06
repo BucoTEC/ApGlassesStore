@@ -14,5 +14,9 @@ namespace API.Data.Entities
         public string LastName { get; set; } = null!;
 
         public string Role { get; set; } = "Customer";
+
+        public DateTime CreatedAt { get; set; } = DateTime.Now;
+
+        public DateTime UpdatedAt { get; set; }
     }
 }
