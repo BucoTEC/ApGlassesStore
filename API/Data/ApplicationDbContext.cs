@@ -26,6 +26,12 @@ namespace API.Data
 
         public DbSet<UserRole> AppUserRoles { get; set; } = null!;
 
+        public DbSet<Order> Orders { get; set; } = null!;
+
+        public DbSet<OrderItem> orderItems { get; set; } = null!;
+
+
+
 
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
