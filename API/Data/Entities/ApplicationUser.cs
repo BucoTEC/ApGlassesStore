@@ -16,7 +16,7 @@ namespace API.Data.Entities
         public int RoleId { get; set; }
         public Role? Role { get; set; }
 
-        public int CartId { get; set; }
+        public int? CartId { get; set; }
 
         public Cart? Cart { get; set; }
 

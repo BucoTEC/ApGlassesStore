@@ -34,6 +34,7 @@ namespace API.Repository.Auth
                 LastName = data.LastName,
                 Email = data.Email,
                 UserName = data.Email,
+                RoleId = 2
             };
 
             return await _userManager.CreateAsync(user, data.Password);
@@ -44,15 +45,19 @@ namespace API.Repository.Auth
         {
             var result = await _signInManager.PasswordSignInAsync(signInModel.Email, signInModel.Password, false, false);
 
+            Console.WriteLine(result);
             if (!result.Succeeded)
             {
                 return "not authorized";
             }
 
+            // todo add checker for user role, find role based in user id and append it in token
             var authClaims = new List<Claim>
             {
                 new Claim(ClaimTypes.Name, signInModel.Email),
-                new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
+                new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
+                new Claim(ClaimTypes.Role, "Customer")
+
             };
             var authSigninKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(_configuration["JWT:Secret"]));
 
