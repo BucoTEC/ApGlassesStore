@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -9,8 +10,8 @@ namespace API.Data.Entities
     {
         public int Id { get; set; }
 
-        public int OwnerId { get; set; }
-
+        [ForeignKey("ApplicationUser")]
+        public int ApplicationUserId { get; set; }
         public ApplicationUser User { get; set; } = null!;
 
 

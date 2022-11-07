@@ -113,6 +113,8 @@ app.MapControllers();
 app.Run();
 
 
+//  check relations
+
 // add user crud
 
 // add categories crud

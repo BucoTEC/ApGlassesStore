@@ -16,10 +16,6 @@ namespace API.Data.Entities
         public int UserRoleId { get; set; }
         public UserRole? UserRole { get; set; }
 
-        public int? CartId { get; set; }
-
-        public Cart? Cart { get; set; }
-
         public bool IsActive { get; set; } = true;
 
         public DateTime CreatedAt { get; set; } = DateTime.Now;
