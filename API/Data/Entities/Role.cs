@@ -5,15 +5,12 @@ using System.Threading.Tasks;
 
 namespace API.Data.Entities
 {
-    public class Category : BaseEntity
+    public class Role
     {
         public int Id { get; set; }
 
-        public string Title { get; set; } = null!;
+        public string Name { get; set; } = null!;
 
         public string Description { get; set; } = null!;
-
-        public int ParentId { get; set; }
-
     }
 }

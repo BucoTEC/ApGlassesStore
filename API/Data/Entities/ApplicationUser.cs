@@ -13,7 +13,14 @@ namespace API.Data.Entities
 
         public string LastName { get; set; } = null!;
 
-        public string Role { get; set; } = "Customer";
+        public int RoleId { get; set; }
+        public Role? Role { get; set; }
+
+        public int CartId { get; set; }
+
+        public Cart? Cart { get; set; }
+
+        public bool IsActive { get; set; }
 
         public DateTime CreatedAt { get; set; } = DateTime.Now;
 
