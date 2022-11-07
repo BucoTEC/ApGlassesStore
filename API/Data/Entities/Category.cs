@@ -12,5 +12,7 @@ namespace API.Data.Entities
         public string Title { get; set; } = null!;
 
         public string Description { get; set; } = null!;
+
+        public List<Product>? Products { get; set; }
     }
 }
