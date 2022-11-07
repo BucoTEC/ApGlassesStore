@@ -111,3 +111,18 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
+
+
+// add user crud
+
+// add categories crud
+
+// add product crud
+
+// add cart item crud
+
+//add cart crud
+
+//add order item crud
+
+//add order crud
