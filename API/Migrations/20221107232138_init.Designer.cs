@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace API.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20221107121410_udpateUser")]
-    partial class udpateUser
+    [Migration("20221107232138_init")]
+    partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -83,9 +83,6 @@ namespace API.Migrations
                     b.Property<bool>("PhoneNumberConfirmed")
                         .HasColumnType("bit");
 
-                    b.Property<int>("RoleId")
-                        .HasColumnType("int");
-
                     b.Property<string>("SecurityStamp")
                         .HasColumnType("nvarchar(max)");
 
@@ -98,6 +95,9 @@ namespace API.Migrations
                     b.Property<string>("UserName")
                         .HasMaxLength(256)
                         .HasColumnType("nvarchar(256)");
+
+                    b.Property<int>("UserRoleId")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
@@ -113,7 +113,7 @@ namespace API.Migrations
                         .HasDatabaseName("UserNameIndex")
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
-                    b.HasIndex("RoleId");
+                    b.HasIndex("UserRoleId");
 
                     b.ToTable("AspNetUsers", (string)null);
                 });
@@ -244,7 +244,7 @@ namespace API.Migrations
                     b.ToTable("Products");
                 });
 
-            modelBuilder.Entity("API.Data.Entities.Role", b =>
+            modelBuilder.Entity("API.Data.Entities.UserRole", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -262,7 +262,7 @@ namespace API.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("ApplicationUserRoles");
+                    b.ToTable("AppUserRoles");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -404,15 +404,15 @@ namespace API.Migrations
                         .WithOne("User")
                         .HasForeignKey("API.Data.Entities.ApplicationUser", "CartId");
 
-                    b.HasOne("API.Data.Entities.Role", "Role")
+                    b.HasOne("API.Data.Entities.UserRole", "UserRole")
                         .WithMany()
-                        .HasForeignKey("RoleId")
+                        .HasForeignKey("UserRoleId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Cart");
 
-                    b.Navigation("Role");
+                    b.Navigation("UserRole");
                 });
 
             modelBuilder.Entity("API.Data.Entities.CartItem", b =>

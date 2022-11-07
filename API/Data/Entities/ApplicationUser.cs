@@ -13,8 +13,8 @@ namespace API.Data.Entities
 
         public string LastName { get; set; } = null!;
 
-        public int RoleId { get; set; }
-        public Role? Role { get; set; }
+        public int UserRoleId { get; set; }
+        public UserRole? UserRole { get; set; }
 
         public int? CartId { get; set; }
 

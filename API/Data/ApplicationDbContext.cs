@@ -24,7 +24,7 @@ namespace API.Data
         public DbSet<Cart>? Carts { get; set; }
         public DbSet<CartItem>? CartItems { get; set; }
 
-        public DbSet<Role> ApplicationUserRoles { get; set; } = null!;
+        public DbSet<UserRole> AppUserRoles { get; set; } = null!;
 
 
 

@@ -34,7 +34,7 @@ namespace API.Repository.Auth
                 LastName = data.LastName,
                 Email = data.Email,
                 UserName = data.Email,
-                RoleId = 2
+                UserRoleId = 2
             };
 
             return await _userManager.CreateAsync(user, data.Password);

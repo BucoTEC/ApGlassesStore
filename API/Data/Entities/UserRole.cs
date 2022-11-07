@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace API.Data.Entities
 {
-    public class Role
+    public class UserRole
     {
         public int Id { get; set; }
 
