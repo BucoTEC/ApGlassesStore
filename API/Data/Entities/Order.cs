@@ -8,7 +8,6 @@ namespace API.Data.Entities
 {
     public class Order : BaseEntity
     {
-        public int Id { get; set; }
 
         public string Address { get; set; } = null!;
 

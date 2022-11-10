@@ -8,7 +8,6 @@ namespace API.Data.Entities
 {
     public class OrderItem : BaseEntity
     {
-        public int Id { get; set; }
 
         public int ProductId { get; set; }
 
