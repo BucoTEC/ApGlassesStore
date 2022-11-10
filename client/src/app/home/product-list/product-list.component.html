@@ -1,3 +1,9 @@
-<div class="m-4">
-  <app-product-card></app-product-card>
+<div
+  class="m-4"
+  style="display: flex; flex-wrap: wrap; justify-content: space-around"
+>
+  <app-product-card
+    *ngFor="let product of mockProducts"
+    [productId]="product.id"
+  ></app-product-card>
 </div>
