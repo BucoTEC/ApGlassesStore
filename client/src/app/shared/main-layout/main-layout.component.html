@@ -1,6 +1,8 @@
 <nav class="navbar bg-light">
   <div class="container-fluid">
-    <span class="navbar-brand mb-0 h1">Navbar</span>
+    <span class="navbar-brand mb-0 h1" [routerLink]="['/']">Navbar</span>
+    <span class="navbar-brand mb-0 h1" [routerLink]="['/user']">profile</span>
+    <span class="navbar-brand mb-0 h1" [routerLink]="['/cart']">cart</span>
   </div>
 </nav>
 <ng-content></ng-content>
